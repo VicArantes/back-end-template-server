@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: template-server
+
+  cache:
+    cache-names: ${spring.application.name}-cache
+    caffeine:
+      spec: maximumSize=100
+    type: caffeine
+
+  config:
+    import: local.yaml
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
