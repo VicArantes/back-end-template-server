@@ -1,13 +1,14 @@
 <configuration>
+    <springProperty name="springApplicationName" source="spring.application.name"/>
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
     </root>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>C:/git/Personal/template/backend/logs/${spring.application.name}.log</file>
+        <file>C:/git/Personal/template/backend/logs/${springApplicationName}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>
-                C:/git/Personal/template/backend/logs/${spring.application.name}-%d{yyyy-MM-dd}.log
+                C:/git/Personal/template/backend/logs/${springApplicationName}-%d{yyyy-MM-dd}.log
             </fileNamePattern>
             <maxHistory>1</maxHistory>
         </rollingPolicy>
